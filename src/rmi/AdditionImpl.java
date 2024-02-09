@@ -20,4 +20,16 @@ public class AdditionImpl extends UnicastRemoteObject implements AdditionInterfa
         }
         return a.equals(b);
     }
+
+    @Override
+    public int factorial(int num) throws RemoteException {
+        int fact = 1;
+        while (num > 0) {
+            fact *= fact * num;
+            num--;
+        }
+        return fact;
+    }
 }
+
+

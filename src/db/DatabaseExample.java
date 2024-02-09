@@ -13,16 +13,18 @@ public class DatabaseExample {
 //            statement.setString(2, "BHM");
 //            statement.execute();
 
-            ResultSet resultSet = statement.executeQuery("select * from class");
+            ResultSet resultSet = statement.executeQuery("select name from class where name like 'B%'");
             while (resultSet.next()) {
-                Integer id = resultSet.getInt(1);
-                String name = resultSet.getString(2);
+//                Integer id = resultSet.getInt(1);
+                String name = resultSet.getString(1);
                 System.out.println("----------------------------------");
-                System.out.println("ID: " + id);
+//                System.out.println("ID: " + id);
                 System.out.println("Name: " + name);
                 System.out.println("----------------------------------");
             }
         }
         connection.close();
+
+
     }
 }

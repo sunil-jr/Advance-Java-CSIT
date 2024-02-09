@@ -1,14 +1,12 @@
 package swing.eventhandling;
 
 import javax.swing.*;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
+import java.awt.event.*;
 
 public class SimpleAdd extends JFrame implements MouseListener {
     JTextField num1;
     JTextField num2;
     JButton btn;
-
     JLabel result;
 
     public SimpleAdd() {
@@ -22,6 +20,17 @@ public class SimpleAdd extends JFrame implements MouseListener {
 
         num1 = new JTextField();
         num1.setBounds(115, 15, 200, 50);
+        num1.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e) {
+                String abc = "asdhsagsahjd";
+                String rev = "";
+                for (char c : abc.toCharArray()) {
+                    rev = c + rev;
+                }
+
+            }
+        });
 
         JLabel lbl2 = new JLabel("Second number:");
         lbl1.setBounds(10, 70, 100, 50);
@@ -33,6 +42,12 @@ public class SimpleAdd extends JFrame implements MouseListener {
         btn = new JButton("Add");
         btn.setBounds(115, 125, 300, 150);
         //adding action listener for button
+        btn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                System.out.println("Action");
+            }
+        });
         btn.addMouseListener(this);
 
         result = new JLabel("Result: ");

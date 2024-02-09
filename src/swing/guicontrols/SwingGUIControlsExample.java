@@ -58,6 +58,10 @@ public class SwingGUIControlsExample extends JFrame {
 
         //button grouping for radio button, since without button group, the radio button will not be checked as individual(multiple buttons
         // are selected)
+//        ButtonGroup buttonGroup = new ButtonGroup();
+//        buttonGroup.add(male);
+//        buttonGroup.add(female);
+
         ButtonGroup buttonGroup = new ButtonGroup();
         buttonGroup.add(male);
         buttonGroup.add(female);

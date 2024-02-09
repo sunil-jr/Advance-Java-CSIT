@@ -11,5 +11,6 @@ public class Client {
         AdditionInterface additionInterface = (AdditionInterface) object;
         System.out.println(additionInterface.add(3, 5));
         System.out.println(additionInterface.isPalindrome("madam"));
+        System.out.println(additionInterface.factorial(4));
     }
 }
